@@ -11,8 +11,9 @@ services:
     depends_on:
       - redis
     environment:
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - XML_URL=${XML_URL}
     command: ["python", "currency_service.py"]
 
   bot_service:
@@ -22,7 +23,7 @@ services:
     depends_on:
       - redis
     environment:
-      - BOT_TOKEN=7013260741:AAHwjBU7kPuvx0-P9AuUBmLXczuTDeBJm6k
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
+      - BOT_TOKEN=${BOT_TOKEN}
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
     command: ["python", "bot_service.py"]

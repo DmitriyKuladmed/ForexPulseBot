@@ -1,3 +1,4 @@
 aiohttp
 redis==4.5.3
 aiogram==3.0.0
+python-dotenv

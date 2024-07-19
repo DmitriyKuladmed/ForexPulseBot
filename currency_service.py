@@ -3,11 +3,15 @@ import xml.etree.ElementTree as ET
 import redis
 import asyncio
 import logging
+import os
+from dotenv import load_dotenv
 from datetime import datetime, timedelta
 
-REDIS_HOST = 'redis'
-REDIS_PORT = 6379
-XML_URL = 'https://www.cbr.ru/scripts/XML_daily.asp'
+load_dotenv()
+
+REDIS_HOST = os.getenv('REDIS_HOST')
+REDIS_PORT = int(os.getenv('REDIS_PORT'))
+XML_URL = os.getenv('XML_URL')
 
 logging.basicConfig(level=logging.INFO)
 

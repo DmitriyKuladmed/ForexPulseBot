@@ -1,14 +1,17 @@
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
+from dotenv import load_dotenv
 import redis.asyncio as redis
 import os
 import logging
 
+load_dotenv()
+
 logging.basicConfig(level=logging.INFO)
 
-BOT_TOKEN = '7013260741:AAHwjBU7kPuvx0-P9AuUBmLXczuTDeBJm6k'
-REDIS_HOST = 'redis'
-REDIS_PORT = 6379
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+REDIS_HOST = os.getenv('REDIS_HOST')
+REDIS_PORT = int(os.getenv('REDIS_PORT'))
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()

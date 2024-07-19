@@ -8,6 +8,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
+COPY .env .env
+
 COPY start_services.sh /app/
 
 RUN chmod +x /app/start_services.sh
